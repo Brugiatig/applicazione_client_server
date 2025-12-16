@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
@@ -17,7 +18,10 @@ public class ClienteSemplice {
             String userInput;
             while((userInput = scanner.nextLine()) != null) {
                 out.println(userInput);
+                System.out.println("Risposta:" + in.readLine());
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
